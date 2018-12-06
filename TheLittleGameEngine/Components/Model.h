@@ -33,17 +33,21 @@ namespace TLGE
 		Mesh* GetMesh() { return m_mesh; }
 		ShaderProgram* GetProgram() { return m_program; }
 		Texture* GetTexture() { return m_texture; }
+		bool GetVisible() { return m_visible; }
 
 		//Setters
 		void SetMesh(Mesh* mesh) { m_mesh = mesh; }
 		void SetProgram(ShaderProgram* program) { m_program = program; }
 		void SetTexture(Texture* texture) { m_texture = texture; }
+		void SetVisible(bool visibility) { m_visible = visibility; }
 
 	protected:
 		Mesh* m_mesh;
 		ShaderProgram* m_program;
 		Texture* m_texture;
 		std::map<ShaderUniforms, float> m_modelInfo;
+
+		bool m_visible;
 	};
 }
 

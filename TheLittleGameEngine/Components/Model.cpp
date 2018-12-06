@@ -3,7 +3,8 @@
 namespace TLGE
 {
 	Model::Model(GameObject* aObjectInCharge):
-		Component(aObjectInCharge)
+		Component(aObjectInCharge),
+		m_visible(true)
 	{
 		aObjectInCharge->RequireComponent<Transform>();
 	}
@@ -23,6 +24,8 @@ namespace TLGE
 
 	void Model::Draw()
 	{
+		if (m_visible == false)
+			return;
 		//TODO: fix 0 to nullptr
 		if (m_mesh == 0)
 			return;
