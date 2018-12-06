@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Libraries\GL\Extensions.h" />
+    <ClInclude Include="Platforms\Windows\TLGE_Windows.h" />
+    <ClInclude Include="Platforms\Windows\WindowManager_Windows.h" />
+    <ClInclude Include="Platforms\Windows\SoundManagerWin32.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Libraries\GL\Extensions.cpp" />
+    <ClCompile Include="Platforms\Windows\TLGE_Windows.cpp" />
+    <ClCompile Include="Platforms\Windows\WindowManager_Windows.cpp" />
+    <ClCompile Include="Platforms\Windows\SoundManagerWin32.cpp" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{F73E684F-74E6-41E3-8A5F-97F4C1E3CC7F}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Evil.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FPSMeter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)gameMain.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\SandBox\SpinComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Hero.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ScaleComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SpinCameraComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SwapComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WobbleComponent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\SandBox\SpinComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Evil.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FPSMeter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Hero.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ScaleComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SpinCameraComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SwapComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WobbleComponent.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{7afef0ae-46a4-4dbf-b0e8-5abe1f551886}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BackButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ButtonScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Evil.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)EvilLogic.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)gameMain.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Hero.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)HeroLogic.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LevelOne.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Level_1.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PauseButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PauseScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Quit.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SceneLink.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SliderTab.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Sound.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SoundScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SpinCameraComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)StartScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Tile.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TileMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Token.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WobbleComponent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BackButton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ButtonsScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Evil.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)EvilLogic.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Hero.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)HeroLogic.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LevelOne.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Level_1.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PauseButton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PauseScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Quit.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SceneLink.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SliderTab.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Sound.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SoundScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SpinCameraComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)StartScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Tile.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TileMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Token.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WobbleComponent.h" />
+  </ItemGroup>
+</Project>

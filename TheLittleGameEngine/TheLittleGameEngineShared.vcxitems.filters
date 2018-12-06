@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Components">
+      <UniqueIdentifier>{68d28810-9bf6-4fc5-ace2-49898f85f86b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Graphics">
+      <UniqueIdentifier>{19c24275-a406-4c98-9bf0-59cb280a910d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{a4b42df8-d1a9-43c1-8892-8b7b4b7371ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Events">
+      <UniqueIdentifier>{adfb8f8f-251d-436d-ba8f-9cf08ab22806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes">
+      <UniqueIdentifier>{54d2b542-788d-4252-8d59-9effbef62f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{2d37f8aa-712d-486a-af4d-f9f98c5dc5a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\GL">
+      <UniqueIdentifier>{f8455e00-7a59-44b7-accd-e97669061a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\glm">
+      <UniqueIdentifier>{8e5682ef-bf4c-4cee-b0a5-56008bf44a30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\glm\detail">
+      <UniqueIdentifier>{ec2665a3-32f1-4fbd-b12f-f96212f573c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\lodepng">
+      <UniqueIdentifier>{605aecb9-bedc-4efa-8131-ca345d2b8788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{dcda1245-efda-4233-a374-eb9de7977dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{72958ba9-fcb7-47a3-bad3-df5481d92cb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Component.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Transform.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Camera.cpp">
+      <Filter>Components\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Model.cpp">
+      <Filter>Components\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Sprite.cpp">
+      <Filter>Components\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\Constants.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\GameCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\GameObject.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\Scene.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\SceneManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\ClickEvent.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\KeyEvent.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\OnQuitEvent.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\ResizeEvent.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\lodepng\lodepng.cpp">
+      <Filter>Libraries\lodepng</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\Mesh.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\Resource.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\ShaderProgram.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\Texture.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Systems\Graphics.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Systems\System.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Components\Button.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Core\Tween.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Core\TweenFuncs.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Components\OBJModel.cpp">
+      <Filter>Components\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Events\MouseMove.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Events\MouseLeaveEvent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Component.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Transform.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Camera.h">
+      <Filter>Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Model.h">
+      <Filter>Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Components\Sprite.h">
+      <Filter>Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\Constants.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\GameCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\GameObject.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\Scene.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\SceneManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Core\WindowManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\ClickEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\Event.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\KeyEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\OnQuitEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\ResizeEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Events\SceneManagerEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Includes\EnginePCH.h">
+      <Filter>Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Includes\TLGE.h">
+      <Filter>Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\GL\glext.h">
+      <Filter>Libraries\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\common.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\exponential.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\ext.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\fwd.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\geometric.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\glm.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\integer.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat2x2.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat2x3.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat2x4.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat3x2.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat3x3.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat3x4.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat4x2.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat4x3.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\mat4x4.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\matrix.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\packing.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\trigonometric.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\vec2.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\vec3.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\vec4.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\vector_relational.hpp">
+      <Filter>Libraries\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_common.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_exponential.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_geometric.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_integer.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_matrix.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_packing.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_trigonometric.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_vector_relational.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\precision.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\setup.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_float.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_gentype.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_half.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_int.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat2x2.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat2x3.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat2x4.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat3x2.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat3x3.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat3x4.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat4x2.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat4x3.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat4x4.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec1.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec2.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec3.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec4.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\_features.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\_fixes.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\_noise.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\_swizzle.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\_swizzle_func.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\_vectorize.hpp">
+      <Filter>Libraries\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\lodepng\lodepng.h">
+      <Filter>Libraries\lodepng</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\Mesh.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\Resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\ShaderProgram.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Resources\Texture.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Systems\Graphics.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Systems\System.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Components\Button.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Core\SoundManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Core\Tween.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Core\TweenFuncs.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Components\OBJModel.h">
+      <Filter>Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Events\MouseMove.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Events\MouseLeaveEvent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_common.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_common_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_exponential.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_exponential_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_geometric.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_geometric_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_integer.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_integer_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_matrix.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_matrix_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_packing.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_packing_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_trigonometric.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_trigonometric_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_vector_relational.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\func_vector_relational_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_gentype.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_half.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat2x2.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat2x3.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat2x4.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat3x2.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat3x3.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat3x4.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat4x2.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat4x3.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat4x4.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_mat4x4_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec1.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec2.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec3.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec4.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\TheLittleGameEngine\Libraries\glm\detail\type_vec4_simd.inl">
+      <Filter>Libraries\glm\detail</Filter>
+    </None>
+  </ItemGroup>
+</Project>
