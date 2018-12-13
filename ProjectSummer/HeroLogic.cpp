@@ -1,7 +1,7 @@
 #include "HeroLogic.h"
 #include "Tile.h"
 
-HeroLogic::HeroLogic(TLGE::GameObject* aObjectInCharge):
+HeroLogic::HeroLogic(TLGE::GameObject* aObjectInCharge) :
 	Component(aObjectInCharge)
 {
 	//tempTile = nullptr;
@@ -18,7 +18,7 @@ void HeroLogic::Update(float aDeltaTime)
 	if (moving)
 	{
 		m_objectInCharge->GetComponent<TLGE::Transform>()->SetPosition(tempPosition);
-		if (glm::distance(tilePosition[movesDone]->GetPosition(), m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition()) <= 0.01)
+		if (glm::distance(tilePosition[movesDone]->GetPosition() + heightOffset, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition()) <= 0.01)
 		{
 			NextStep();
 		}
@@ -31,9 +31,10 @@ void HeroLogic::MoveHero()
 	//movement phase enum triggered before or in this function
 	//call tween//use numMovesTaken
 	//this->GetComponent<Transform>()->SetPosition(glm::vec3(10.0f, 0.0f, 0.0f));
-	
-	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), glm::vec3(20.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0)));
-	TLGE::Tween::NewTween(GetObjectInCharge()->GetScene(), &tempPosition, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tilePosition[movesDone]->GetPosition(), 1.0f, TweenFunc_Linear);
+	glm::vec3 nastyTemp = (tilePosition[movesDone]->GetPosition() + heightOffset);
+	//nastyTemp.y *= -1.0f;
+	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), nastyTemp, glm::vec3(0.0f, 1.0f, 0.0)));
+	TLGE::Tween::NewTween(GetObjectInCharge()->GetScene(), &tempPosition, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tilePosition[movesDone]->GetPosition() + heightOffset, 1.0f, TweenFunc_Linear);
 	moving = true;
 }
 
@@ -47,6 +48,7 @@ void HeroLogic::AddMove(Tile* aposition)//,float identity)
 
 		numMovesTaken++;
 		tempTile = aposition;
+		aposition->SetState(1);
 		if (numMovesTaken == maxNumMoves)//change this///well more like add to it
 		{
 			MoveHero();
@@ -83,15 +85,15 @@ void HeroLogic::NextStep()
 		//myObject->GetComponent<TileMap>()->StartEnemyTurn();
 		//myTileMap->GetComponent<TileMap>()->StartEnemyTurn();
 		((TileMap*)myTileMap)->StartEnemyTurn();//change to setTurn
-		//nowenemyPhase enum
+												//nowenemyPhase enum
 	}
 }
 
 bool HeroLogic::CheckIfNeighbour(Tile* aTile)
 {
 	//identity instead??
-	if(tempTile->m_Neighbour1 == aTile->GetIdentity())
-	return true;
+	if (tempTile->m_Neighbour1 == aTile->GetIdentity())
+		return true;
 	if (tempTile->m_Neighbour2 == aTile->GetIdentity())
 		return true;
 	if (tempTile->m_Neighbour3 == aTile->GetIdentity())

@@ -10,7 +10,7 @@ enum HeroState
 
 class HeroLogic;
 
-class HeroLogic:public TLGE::Component
+class HeroLogic :public TLGE::Component
 {
 public:
 	HeroLogic(TLGE::GameObject* objectInCharge);
@@ -35,10 +35,12 @@ private:
 	int maxNumMoves = 3;
 	int numMovesTaken = 0;
 	int movesDone = 0;
+	glm::vec3 heightOffset = glm::vec3(0.0f, 12.0f, 0.0f);
+	glm::vec3 worldChange = glm::vec3(1.0f, 1.0f, -1.0f);
 	bool moving = false;
 	Tile *tempTile;//used for checking tiles in order from hero
-	glm::vec3 tempPosition=glm::vec3(0.0f,0.0f,0.0f);
-	
+	glm::vec3 tempPosition = glm::vec3(0.0f, 0.0f, 0.0f);
+
 	bool CheckIfNeighbour(Tile* aTile);
 	std::vector<Tile*> tilePosition;
 };
