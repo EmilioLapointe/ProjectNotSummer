@@ -11,8 +11,19 @@ public:
 	void Update(float deltaTime);
 
 	void AddOffset(float offset);
+	
+	void Start();
+	void Pause();
+	void Stop();
+	void SmoothStop();
+
+	bool IsWobbling() const { return m_isWobbling; }
+
 private:
 	float m_timeSinceStart;
+	float m_amplitude;
+	bool m_isWobbling;
+	bool m_shouldStop;
 };
 
 #endif
