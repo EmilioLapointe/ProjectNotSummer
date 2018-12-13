@@ -36,7 +36,7 @@ void WobbleComponent::Update(float aDeltaTime)
 	if (m_shouldStop)
 	{
 		if ((prevModification >= 0 && nextModification < 0) ||
-			(prevModification <= 0 && nextModification > 0)
+			(prevModification <= 0 && nextModification > 0))
 		{
 			m_shouldStop = false;
 			m_isWobbling = false;
