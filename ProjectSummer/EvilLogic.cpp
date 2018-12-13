@@ -19,7 +19,7 @@ void EvilLogic::Update(float aDeltaTime)
 	if (moving)
 	{
 		m_objectInCharge->GetComponent<TLGE::Transform>()->SetPosition(tempPosition);
-		if (glm::distance(tempTile->GetPosition(), m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition()) <= 0.01)
+		if (glm::distance(tempTile->GetPosition() + heightOffset, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition()) <= 0.01)
 		{
 			NextStep();
 		}
@@ -39,8 +39,8 @@ void EvilLogic::MoveEvil()
 	}
 	tempTile = ((TileMap*)myTileMap)->GetTile(a);
 	//tempTile = this->GetObjectInCharge()->GetComponent<TileMap>()->GetTile(a);
-	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), glm::vec3(20.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0)));
-	TLGE::Tween::NewTween(GetObjectInCharge()->GetScene(), &tempPosition, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tempTile->GetPosition(), 1.0f, TweenFunc_Linear);
+	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tempTile->GetPosition() + heightOffset, glm::vec3(0.0f, 1.0f, 0.0)));
+	TLGE::Tween::NewTween(GetObjectInCharge()->GetScene(), &tempPosition, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tempTile->GetPosition() + heightOffset, 1.0f, TweenFunc_Linear);
 	moving = true;
 }
 

@@ -7,7 +7,7 @@
 
 using namespace TLGE;
 
-LevelOne::LevelOne(char* aName):
+LevelOne::LevelOne(char* aName) :
 	Scene(aName)
 {
 	AddSystem<Graphics>();
@@ -17,18 +17,18 @@ LevelOne::LevelOne(char* aName):
 	hero->AddComponent<Transform>();
 	//m_Hero->AddChild(new Hero((char*)"Hero"));
 	AddGameObject(hero);
-	hero->GetComponent<Transform>()->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+	hero->GetComponent<Transform>()->SetPosition(glm::vec3(0.0f, 12.0f, 0.0f));
 	hero->GetComponent<Transform>()->SetScale(glm::vec3(2.0f, 2.0f, 2.0f));
-	hero->GetComponent<Transform>()->RotateX(90);
+	//hero->GetComponent<Transform>()->RotateX(90);
 
 	//m_Hero = new GameObject((char*)"Hero");
 	GameObject* evil1 = new Evil((char*)"Evil");
 	evil1->AddComponent<Transform>();
 	//m_Hero->AddChild(new Hero((char*)"Hero"));
 	AddGameObject(evil1);
-	evil1->GetComponent<Transform>()->SetPosition(glm::vec3(60.0f, 60.0f, 0.0f));
+	evil1->GetComponent<Transform>()->SetPosition(glm::vec3(60.0f, 5.0f, 0.0f));
 	evil1->GetComponent<Transform>()->SetScale(glm::vec3(2.0f, 2.0f, 2.0f));
-	evil1->GetComponent<Transform>()->RotateX(90);
+	//evil1->GetComponent<Transform>()->RotateX(90);
 
 	GameObject* tileMap = new GameObject((char*)"TileMap");
 	AddGameObject(tileMap);
@@ -43,7 +43,7 @@ LevelOne::LevelOne(char* aName):
 
 	hero->GetComponent<HeroLogic>()->SetStartingTile(tileMap->GetComponent<TileMap>()->GetTile(0));
 	evil1->GetComponent<EvilLogic>()->SetStartingTile(tileMap->GetComponent<TileMap>()->GetTile(17), tileMap->GetComponent<TileMap>()->GetLength(), tileMap->GetComponent<TileMap>()->GetWidth());
-	
+
 	GameObject* camera = new GameObject("Camera");
 	camera->AddComponent<Transform>()->SetPosition(glm::vec3(0.0f, 0.0f, 80.0f));
 	camera->AddComponent<Camera>()->SetIsPerspective(true);

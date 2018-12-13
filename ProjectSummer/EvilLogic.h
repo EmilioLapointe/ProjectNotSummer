@@ -21,7 +21,7 @@ public:
 	void MoveEvil();
 	void NextStep();
 
-	void SetStartingTile(Tile* aTile, int mapWith,int mapHeight);
+	void SetStartingTile(Tile* aTile, int mapWith, int mapHeight);
 
 	void AddTileMapReference(TLGE::Component* aComponent);
 
@@ -33,6 +33,7 @@ private:
 	int movesDone = 0;
 	bool moving = false;
 	Tile *tempTile;//used for checking tiles in order from hero
+	glm::vec3 heightOffset = glm::vec3(0.0f, 5.0f, 0.0f);
 	glm::vec3 tempPosition = glm::vec3(0.0f, 0.0f, 0.0f);
 	int maxRandomNum;
 
