@@ -39,7 +39,12 @@ void EvilLogic::MoveEvil()
 	}
 	tempTile = ((TileMap*)myTileMap)->GetTile(a);
 	//tempTile = this->GetObjectInCharge()->GetComponent<TileMap>()->GetTile(a);
-	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tempTile->GetPosition() + heightOffset, glm::vec3(0.0f, 1.0f, 0.0)));
+
+	glm::vec3 lookAtGoal = tempTile->GetPosition();
+	lookAtGoal.z *= -1.0f;
+	glm::vec3 lookAtSource = m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition();
+	lookAtSource.z *= -1.0f;
+	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(lookAtSource, lookAtGoal, glm::vec3(0.0f, 1.0f, 0.0)));
 	TLGE::Tween::NewTween(GetObjectInCharge()->GetScene(), &tempPosition, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tempTile->GetPosition() + heightOffset, 1.0f, TweenFunc_Linear);
 	moving = true;
 }

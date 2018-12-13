@@ -31,9 +31,11 @@ void HeroLogic::MoveHero()
 	//movement phase enum triggered before or in this function
 	//call tween//use numMovesTaken
 	//this->GetComponent<Transform>()->SetPosition(glm::vec3(10.0f, 0.0f, 0.0f));
-	glm::vec3 nastyTemp = (tilePosition[movesDone]->GetPosition() + heightOffset);
-	//nastyTemp.y *= -1.0f;
-	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), nastyTemp, glm::vec3(0.0f, 1.0f, 0.0)));
+	glm::vec3 lookAtGoal = (tilePosition[movesDone]->GetPosition() + heightOffset);
+	lookAtGoal.z *= -1.0f;
+	glm::vec3 lookAtSource = m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition();
+	lookAtSource.z *= -1.0f;
+	m_objectInCharge->GetComponent<TLGE::Transform>()->SetRotation(glm::lookAt(lookAtSource, lookAtGoal, glm::vec3(0.0f, 1.0f, 0.0)));
 	TLGE::Tween::NewTween(GetObjectInCharge()->GetScene(), &tempPosition, m_objectInCharge->GetComponent<TLGE::Transform>()->GetPosition(), tilePosition[movesDone]->GetPosition() + heightOffset, 1.0f, TweenFunc_Linear);
 	moving = true;
 }
