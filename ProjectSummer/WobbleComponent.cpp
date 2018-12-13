@@ -45,7 +45,7 @@ void WobbleComponent::Update(float aDeltaTime)
 		}
 	}
 
-	currentPosition.y += nextModification;
+	currentPosition.y = unmodifiedY + nextModification;
 	trasformToModify->SetPosition(currentPosition);
 }
 

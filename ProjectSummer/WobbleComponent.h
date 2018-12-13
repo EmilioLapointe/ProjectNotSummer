@@ -18,6 +18,8 @@ public:
 	void SmoothStop();
 
 	bool IsWobbling() const { return m_isWobbling; }
+	float GetAmplitude() const { return m_amplitude; }
+	void SetAmplitude(const float amplitude) { m_amplitude = amplitude; }
 
 private:
 	float m_timeSinceStart;

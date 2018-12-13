@@ -93,13 +93,27 @@ Hero::Hero(char* aName):
 	crystal->AddComponent<OBJModel>()->CreateOBJ((char*)"Data/OBJs/Hero-Crystal.obj", (char*)"Data/Textures/DiffuseMap-Hero.png", (char*)"Data/Shaders/Temp3DXZ.vert", (char*)"Data/Shaders/Temp3DXZ.frag");
 	ring->AddComponent<OBJModel>()->CreateOBJ((char*)"Data/OBJs/Hero-Ring.obj", (char*)"Data/Textures/DiffuseMap-Hero.png", (char*)"Data/Shaders/Temp3DXZ.vert", (char*)"Data/Shaders/Temp3DXZ.frag");
 
-	head->AddComponent<WobbleComponent>()->AddOffset(0.4f);
-	body->AddComponent<WobbleComponent>();
-	rightShoulder->AddComponent<WobbleComponent>()->AddOffset(0.2f);
-	leftShoulder->AddComponent<WobbleComponent>()->AddOffset(0.2f);
-	rightHand->AddComponent<WobbleComponent>()->AddOffset(0.3f);
-	leftHand->AddComponent<WobbleComponent>()->AddOffset(0.5f);
-	ring->AddComponent<WobbleComponent>()->AddOffset(PI);
+	WobbleComponent* tempWobble = nullptr;
+	tempWobble = head->AddComponent<WobbleComponent>();
+	tempWobble->AddOffset(0.4f);
+	tempWobble->SetAmplitude(0.25f);
+	tempWobble = body->AddComponent<WobbleComponent>();
+	tempWobble->SetAmplitude(0.25f);
+	tempWobble = rightShoulder->AddComponent<WobbleComponent>();
+	tempWobble->AddOffset(0.2f);
+	tempWobble->SetAmplitude(0.25f);
+	tempWobble = leftShoulder->AddComponent<WobbleComponent>();
+	tempWobble->AddOffset(0.2f);
+	tempWobble->SetAmplitude(0.25f);
+	tempWobble = rightHand->AddComponent<WobbleComponent>();
+	tempWobble->AddOffset(0.3f);
+	tempWobble->SetAmplitude(0.25f);
+	tempWobble = leftHand->AddComponent<WobbleComponent>();
+	tempWobble->AddOffset(0.5f);
+	tempWobble->SetAmplitude(0.25f);
+	tempWobble = ring->AddComponent<WobbleComponent>();
+	tempWobble->AddOffset(PI);
+	tempWobble->SetAmplitude(0.25f);
 
 	AddChild(head);
 	AddChild(body);

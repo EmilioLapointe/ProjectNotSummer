@@ -4,3 +4,4 @@ Debug/
 ipch/
 temp/
 bin/
+*.vcxproj
