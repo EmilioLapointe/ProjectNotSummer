@@ -105,6 +105,12 @@ using namespace TLGE;
 			TileModel->GetComponent<Transform>()->SetRotation(glm::vec3(-PI * 0.5, 0.0f, 0.0f));
 			TileModel->AddComponent<OBJModel>()->CreateOBJ((char*)"Data/OBJs/TileNeutral.obj", (char*)"Data/Textures/DiffuseMap-TileNeutral.png", (char*)"Data/Shaders/Temp3DXZ.vert", (char*)"Data/Shaders/Temp3DXZ.frag");
 
+			GameObject* TileModel1 = new GameObject("TileModel1");
+			TileModel1->AddComponent<Transform>()->SetScale(glm::vec3(2.5f));
+			TileModel1->GetComponent<Transform>()->SetRotation(glm::vec3(-PI * 0.5, 0.0f, 0.0f));
+			TileModel1->AddComponent<OBJModel>()->CreateOBJ((char*)"Data/OBJs/TileGood.obj", (char*)"Data/Textures/DiffuseMap-TileGood.png", (char*)"Data/Shaders/Temp3DXZ.vert", (char*)"Data/Shaders/Temp3DXZ.frag");
+			TileModel1->GetComponent<OBJModel>()->SetVisible(false);
+
 			m_TileObject[i] = new GameObject(tileNumber);
 			//m_TileObject[i]->GetComponent<Tile>()->Initialize(0);//Tilesate
 			GetObjectInCharge()->AddChild(m_TileObject[i]);
@@ -116,6 +122,7 @@ using namespace TLGE;
 			m_TileObject[i]->GetComponent<Tile>()->AddHero(m_Hero);
 			m_TileObject[i]->GetComponent<Tile>()->AddIdentity(i);
 			m_TileObject[i]->AddChild(TileModel);
+			m_TileObject[i]->AddChild(TileModel1);
 			m_TileObject[i]->GetComponent<Tile>()->Initialize(1, m_mapLength, m_mapWidth);
 
 

@@ -61,6 +61,7 @@ enum tileState
 		TLGE::Texture* claimedTexture;
 		TLGE::Texture* neutralTexture;
 		TLGE::Texture* corruptedTexture;
+		//TLGE::GameObject* claimedTile;
 		tileState myState;
 	};
 
