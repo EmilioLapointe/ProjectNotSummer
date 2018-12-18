@@ -20,6 +20,18 @@ private:
 	unsigned int m_latestMouseXs[FRAMES_CHECKED_COUNT];
 	unsigned int m_currentFrame;
 	float m_zRot;
+
+	//These do not include the Y axis
+	float m_maxDistanceFromTarget;
+	float m_minDistanceFromTarget;
+
+	float m_maxHeight;
+	float m_minHeight;
+
+	float m_currentZoom;
+
+	bool m_zoomingOut;
+	bool m_zoomingIn;
 };
 
 #endif

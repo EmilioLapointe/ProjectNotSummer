@@ -7,7 +7,12 @@ SpinCameraComponent::SpinCameraComponent(GameObject* aObjectInCharge):
 	m_mouseClicked(false),
 	m_velocity(0.0f),
 	m_currentFrame(0),
-	m_zRot(0.0f)
+	m_zRot(0.0f),
+	m_maxDistanceFromTarget(0.0f),
+	m_minDistanceFromTarget(150.0f),
+	m_maxHeight(150.0f),
+	m_minHeight(20.0f),
+	m_currentZoom(0.0f)
 {
 	//nothing to do
 }
@@ -20,9 +25,10 @@ void SpinCameraComponent::Update(float aDeltaTime)
 {
 	Transform* trans = m_objectInCharge->GetComponent<Transform>();
 
+	glm::vec3 oldRot = trans->GetEulerRotation();
+
 	if (m_mouseClicked)
 	{
-		trans->RotateY(m_velocity * PI);
 		m_zRot += m_velocity * PI;
 		m_velocity = 0;
 	}
@@ -30,7 +36,6 @@ void SpinCameraComponent::Update(float aDeltaTime)
 	{
 		if (m_velocity != 0)
 		{
-			trans->RotateY(m_velocity * PI);
 			m_zRot += m_velocity * PI;
 			m_velocity *= 0.93f;
 
@@ -45,7 +50,31 @@ void SpinCameraComponent::Update(float aDeltaTime)
 		}
 	}
 
-	trans->SetPosition(glm::vec3(150.0f * sinf(m_zRot), 20.0f, 150.0f * cosf(m_zRot)));
+	if (m_zoomingIn)
+	{
+		m_currentZoom -= aDeltaTime;
+		if (m_currentZoom < 0)
+		{
+			m_currentZoom = 0;
+		}
+	}
+	if (m_zoomingOut)
+	{
+		m_currentZoom += aDeltaTime;
+		if (m_currentZoom > 1.0f)
+		{
+			m_currentZoom = 1.0f;
+		}
+	}
+
+	float distance = m_minDistanceFromTarget + ((m_maxDistanceFromTarget - m_minDistanceFromTarget) * m_currentZoom);
+	float height = m_minHeight + ((m_maxHeight - m_minHeight) * m_currentZoom);
+
+	float tilt = (PI * m_currentZoom * 0.5);
+
+
+	trans->SetPosition(glm::vec3(distance * sinf(m_zRot), height, distance * cosf(m_zRot)));
+	trans->SetRotation(glm::vec3(-tilt, m_zRot, 0.0f));
 }
 
 void SpinCameraComponent::HandleEvent(TLGE::Event* aEvent)
@@ -100,5 +129,31 @@ void SpinCameraComponent::HandleEvent(TLGE::Event* aEvent)
 		m_currentFrame = 0;
 		
 		m_mouseClicked = false;
+	}
+	else if (strcmp(aEvent->GetType(), "KEY") == 0)
+	{
+		KeyEvent* key = static_cast<KeyEvent*>(aEvent);
+		if (key->GetKey() == 'U')
+		{
+			if (key->GetState() == KeyState_JustPressed)
+			{
+				m_zoomingOut = true;
+			}
+			else if (key->GetState() == KeyState_Unpressed)
+			{
+				m_zoomingOut = false;
+			}
+		}
+		else if (key->GetKey() == 'J')
+		{
+			if (key->GetState() == KeyState_JustPressed)
+			{
+				m_zoomingIn = true;
+			}
+			else if (key->GetState() == KeyState_Unpressed)
+			{
+				m_zoomingIn = false;
+			}
+		}
 	}
 }
