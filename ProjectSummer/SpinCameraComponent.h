@@ -32,6 +32,8 @@ private:
 
 	bool m_zoomingOut;
 	bool m_zoomingIn;
+
+	bool m_startedInTheUpperHalf;
 };
 
 #endif

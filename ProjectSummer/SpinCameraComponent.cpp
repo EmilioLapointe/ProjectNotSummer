@@ -70,7 +70,7 @@ void SpinCameraComponent::Update(float aDeltaTime)
 	float distance = m_minDistanceFromTarget + ((m_maxDistanceFromTarget - m_minDistanceFromTarget) * m_currentZoom);
 	float height = m_minHeight + ((m_maxHeight - m_minHeight) * m_currentZoom);
 
-	float tilt = (PI * m_currentZoom * 0.5);
+	float tilt = (PI * m_currentZoom * 0.5f);
 
 
 	trans->SetPosition(glm::vec3(distance * sinf(m_zRot), height, distance * cosf(m_zRot)));
@@ -88,6 +88,14 @@ void SpinCameraComponent::HandleEvent(TLGE::Event* aEvent)
 			for (int i = 0; i < FRAMES_CHECKED_COUNT; i++)
 			{
 				m_latestMouseXs[i] = click->GetPosition().x;
+			}
+			if (static_cast<unsigned int>(click->GetPosition().y) > GameCore::GetInstance()->GetWindowManager()->GetHeight() / 2)
+			{
+				m_startedInTheUpperHalf = true;
+			}
+			else
+			{
+				m_startedInTheUpperHalf = false;
 			}
 			m_currentFrame = 0;
 			m_velocity = 0;
@@ -111,7 +119,14 @@ void SpinCameraComponent::HandleEvent(TLGE::Event* aEvent)
 
 		if (m_mouseClicked)
 		{
-			m_velocity += (static_cast<float>(m_latestMouseXs[nextFrame]) - static_cast<float>(newMousePos)) / static_cast<float>(screenWidth);
+			if (m_startedInTheUpperHalf)
+			{
+				m_velocity += (static_cast<float>(m_latestMouseXs[nextFrame]) - static_cast<float>(newMousePos)) / static_cast<float>(screenWidth);
+			}
+			else
+			{
+				m_velocity -= (static_cast<float>(m_latestMouseXs[nextFrame]) - static_cast<float>(newMousePos)) / static_cast<float>(screenWidth);
+			}
 			m_latestMouseXs[nextFrame] = newMousePos;
 			m_currentFrame = nextFrame;
 		}
