@@ -47,7 +47,11 @@
 			//want to get child of tile claimedTile to change its visibility
 			//and do the same for neutral tile
 			//no getchild functinality? should I just hard reference? with a variable that stores it
+			//this->GetObjectInCharge()->GetComponent<TLGE::Sprite>()->SetTexture(neutralTexture);
 		}
+		//this->GetObjectInCharge()->GetComponent<TLGE::Sprite>()->SetTexture(claimedTexture);//SetTexture((char*)"Data/Textures/NeutTile.png");
+		
+						//change to 3d
 	}
 
 	void Tile::Update(float adeltatime)
@@ -71,8 +75,7 @@
 			//std::vector<int> avector = ((TileMap*)m_SceneObject)->getSurroundingTiles(this);//what I use this for?
 			
 
-			this->GetObjectInCharge()->GetComponent<TLGE::Sprite>()->SetTexture(claimedTexture);//SetTexture((char*)"Data/Textures/NeutTile.png");
-				//change to 3d
+			
 
 			myHero->GetComponent<HeroLogic>()->AddMove(this);// , identity);//add this tile reference
 			

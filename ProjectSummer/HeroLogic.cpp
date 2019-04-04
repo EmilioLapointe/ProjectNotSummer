@@ -69,6 +69,7 @@ void HeroLogic::CancelMove()
 void HeroLogic::NextStep()
 {
 	//ClaimToken();
+	tilePosition[movesDone]->SetState(1);
 	movesDone++;
 	if (movesDone < numMovesTaken)
 	{
