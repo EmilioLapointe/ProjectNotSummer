@@ -12,6 +12,10 @@
 		m_Neighbour4 = -1;
 		claimedTexture = new TLGE::Texture();
 		claimedTexture->CreateTexture((char*)"Data/Textures/ClaimedTile.png");
+		neutralTexture = new TLGE::Texture();
+		neutralTexture->CreateTexture((char*)"Data/Textures/NeutralTile.png");
+		corruptedTexture = new TLGE::Texture();
+		corruptedTexture->CreateTexture((char*)"Data/Textures/InfectedTile.png");
 	}
 
 	Tile::~Tile()
@@ -48,9 +52,17 @@
 			//and do the same for neutral tile
 			//no getchild functinality? should I just hard reference? with a variable that stores it
 			//this->GetObjectInCharge()->GetComponent<TLGE::Sprite>()->SetTexture(neutralTexture);
+
+			this->GetObjectInCharge()->GetComponent<TLGE::Sprite>()->SetTexture(claimedTexture);//SetTexture((char*)"Data/Textures/NeutTile.png");
+			RaisePosition(1.0f);
+		}
+		else if (m_state ==2)
+		{
+			this->GetObjectInCharge()->GetComponent<TLGE::Sprite>()->SetTexture(corruptedTexture);//SetTexture((char*)"Data/Textures/NeutTile.png");
+			RaisePosition(1.0f);
 		}
 		//this->GetObjectInCharge()->GetComponent<TLGE::Sprite>()->SetTexture(claimedTexture);//SetTexture((char*)"Data/Textures/NeutTile.png");
-		
+		//RaisePosition(1.0f);
 						//change to 3d
 	}
 

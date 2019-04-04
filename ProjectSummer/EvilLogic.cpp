@@ -39,6 +39,8 @@ void EvilLogic::MoveEvil()
 	}
 	tempTile = ((TileMap*)myTileMap)->GetTile(a);
 	//tempTile = this->GetObjectInCharge()->GetComponent<TileMap>()->GetTile(a);
+	tempTile->SetState(2);
+	tempTile->RaisePosition(-1.0f);
 
 	glm::vec3 lookAtGoal = tempTile->GetPosition();
 	lookAtGoal.z *= -1.0f;
