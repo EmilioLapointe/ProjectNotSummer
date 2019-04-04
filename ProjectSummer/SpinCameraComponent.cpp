@@ -27,6 +27,7 @@ void SpinCameraComponent::Update(float aDeltaTime)
 
 	glm::vec3 oldRot = trans->GetEulerRotation();
 
+	
 	if (m_mouseClicked)
 	{
 		m_zRot += m_velocity * PI;
@@ -49,21 +50,23 @@ void SpinCameraComponent::Update(float aDeltaTime)
 			}
 		}
 	}
-
-	if (m_zoomingIn)
+	if (m_controlledBySlider == false)
 	{
-		m_currentZoom -= aDeltaTime;
-		if (m_currentZoom < 0)
+		if (m_zoomingIn)
 		{
-			m_currentZoom = 0;
+			m_currentZoom -= aDeltaTime;
+			if (m_currentZoom < 0)
+			{
+				m_currentZoom = 0;
+			}
 		}
-	}
-	if (m_zoomingOut)
-	{
-		m_currentZoom += aDeltaTime;
-		if (m_currentZoom > 1.0f)
+		if (m_zoomingOut)
 		{
-			m_currentZoom = 1.0f;
+			m_currentZoom += aDeltaTime;
+			if (m_currentZoom > 1.0f)
+			{
+				m_currentZoom = 1.0f;
+			}
 		}
 	}
 
@@ -84,21 +87,24 @@ void SpinCameraComponent::HandleEvent(TLGE::Event* aEvent)
 		ClickEvent* click = static_cast<ClickEvent*>(aEvent);
 		if (click->GetState() == ClickState_JustClicked)
 		{
-			m_mouseClicked = true;
-			for (int i = 0; i < FRAMES_CHECKED_COUNT; i++)
+			if (aEvent->GetHandled() == false)
 			{
-				m_latestMouseXs[i] = click->GetPosition().x;
+				m_mouseClicked = true;
+				for (int i = 0; i < FRAMES_CHECKED_COUNT; i++)
+				{
+					m_latestMouseXs[i] = click->GetPosition().x;
+				}
+				if (static_cast<unsigned int>(click->GetPosition().y) > GameCore::GetInstance()->GetWindowManager()->GetHeight() / 2)
+				{
+					m_startedInTheUpperHalf = true;
+				}
+				else
+				{
+					m_startedInTheUpperHalf = false;
+				}
+				m_currentFrame = 0;
+				m_velocity = 0;
 			}
-			if (static_cast<unsigned int>(click->GetPosition().y) > GameCore::GetInstance()->GetWindowManager()->GetHeight() / 2)
-			{
-				m_startedInTheUpperHalf = true;
-			}
-			else
-			{
-				m_startedInTheUpperHalf = false;
-			}
-			m_currentFrame = 0;
-			m_velocity = 0;
 		}
 		else if (click->GetState() == ClickState_Unclicked)
 		{

@@ -1,5 +1,6 @@
 #include "SliderTab.h"
 #include <TLGE.h>
+#include "SpinCameraComponent.h"
 
 using namespace TLGE;
 
@@ -25,26 +26,32 @@ void SliderTab::Update(float adeltatime)
 {
 	if (follow)
 	{
-		if (MousePos1 < minimumBound)
+		if (MousePos1 < minimumBound + GetObjectInCharge()->GetParent()->GetComponent<Transform>()->GetPosition().x)
 		{
-			MousePos1 = minimumBound;
+			MousePos1 = minimumBound + GetObjectInCharge()->GetParent()->GetComponent<Transform>()->GetPosition().x;
 		}
-		else if (MousePos1 > maximumBound)
+		else if (MousePos1 > maximumBound + GetObjectInCharge()->GetParent()->GetComponent<Transform>()->GetPosition().x)
 		{
-			MousePos1 = maximumBound;
+			MousePos1 = maximumBound + GetObjectInCharge()->GetParent()->GetComponent<Transform>()->GetPosition().x;
 		}
 		//position.x=MousPos;
 		oldPosition=thisTab->GetComponent<Transform>()->GetPosition();
 		if (amIHorizontal)
 		{
-			thisTab->GetComponent<Transform>()->SetPosition(glm::vec3(MousePos1, oldPosition.y, oldPosition.z));
+			thisTab->GetComponent<Transform>()->SetPosition(glm::vec3(MousePos1 - GetObjectInCharge()->GetParent()->GetComponent<Transform>()->GetPosition().x, oldPosition.y, oldPosition.z));
 		}
 		if (!amIHorizontal)
 		{
-			thisTab->GetComponent<Transform>()->SetPosition(glm::vec3(oldPosition.x, MousePos1, oldPosition.z));
+			thisTab->GetComponent<Transform>()->SetPosition(glm::vec3(oldPosition.x, MousePos1 - GetObjectInCharge()->GetParent()->GetComponent<Transform>()->GetPosition().x, oldPosition.z));
 		}
 		//thisTab->GetComponent<Transform>()->SetPosition()
 		//thisTab.position.x = MousePos;
+	}
+
+	if (m_camera != nullptr)
+	{
+		float val = ((thisTab->GetComponent<Transform>()->GetPosition().x - minimumBound) / (maximumBound - minimumBound));
+		m_camera->SetZoom(val);
 	}
 }
 

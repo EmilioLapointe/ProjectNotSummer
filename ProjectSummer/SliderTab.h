@@ -2,6 +2,8 @@
 #define _TLGE_SliderTab_H__
 #include <TLGE.h>
 
+class SpinCameraComponent;
+
 class SliderTab : public TLGE::Button
 {
 public:
@@ -13,7 +15,7 @@ public:
 	float minimumBound;//probably integrat
 	float maximumBound;//probably integrate
 	float value = 50.0f;
-	float Xposition=0.0f;
+	float Xposition = 0.0f;
 	TLGE::GameObject* thisTab;
 	glm::vec3 oldPosition;
 
@@ -33,6 +35,10 @@ public:
 
 	glm::vec3 GetWorldPosOfScreenpos(TLGE::Camera cam, const glm::vec3 &planePoint, const glm::vec3 &planeNormal, const glm::ivec2 &screenPos);
 
+	void SetCamera(SpinCameraComponent* camera) { m_camera = camera; }
+
+private:
+	SpinCameraComponent* m_camera{nullptr};
 
  };
 #endif // !_TLGE_SliderTab_H__

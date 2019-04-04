@@ -21,9 +21,14 @@ namespace TLGE
 
 		//Getters
 		char* GetType() { return m_type; }
+		bool GetHandled() { return m_handled; }
+
+		//Setters
+		void SetHandled(bool handled) { m_handled = handled; }
 
 	protected:
 		char* m_type;
+		bool m_handled{false};
 	};
 }
 

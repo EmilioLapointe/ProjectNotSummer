@@ -25,6 +25,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Level_1.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PauseButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PauseScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Prefabs\SliderPrefab.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Quit.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneLink.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SliderTab.cpp" />
@@ -48,6 +49,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Level_1.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PauseButton.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PauseScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Prefabs\SliderPrefab.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Quit.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneLink.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SliderTab.h" />

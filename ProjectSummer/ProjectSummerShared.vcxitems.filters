@@ -10,6 +10,9 @@
     <Filter Include="GameComponents\Buttons">
       <UniqueIdentifier>{65064cff-e347-4075-a101-e2a6de46a1b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Prefabs">
+      <UniqueIdentifier>{c3504a70-42ad-4ac5-b52f-49d65f6e003a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)gameMain.cpp" />
@@ -34,6 +37,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)ButtonScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneLink.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)LevelOne.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Prefabs\SliderPrefab.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)BackButton.h" />
@@ -57,5 +61,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)ButtonsScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneLink.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LevelOne.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Prefabs\SliderPrefab.h" />
   </ItemGroup>
 </Project>
