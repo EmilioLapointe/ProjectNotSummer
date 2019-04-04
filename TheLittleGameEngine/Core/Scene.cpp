@@ -6,6 +6,7 @@ namespace TLGE
 	{
 		m_name = aName;
 		m_ObjectRoot = new GameObject("Root");
+		m_ObjectRoot->AddComponent<Transform>();
 		m_ObjectRoot->SetScene(this);
 		GameCore::GetInstance()->GetSceneManager()->AddScene(this);
 	}

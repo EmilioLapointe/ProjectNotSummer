@@ -84,8 +84,9 @@ namespace TLGE
 	{
 		DoNextScenes();
 		DoBack();
-		for (std::vector<Scene*>::iterator it = ActiveScenes.begin(); it != ActiveScenes.end(); it++)
+		for (std::vector<Scene*>::iterator it = ActiveScenes.end(); it != ActiveScenes.begin();)
 		{
+			it--;
 			if ((*it)->IsActive())
 			{
 				(*it)->OnEvent(aEvent);

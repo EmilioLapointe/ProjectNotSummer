@@ -13,6 +13,9 @@ public:
 
 	void Update(float deltaTime);
 
+	void SetZoom(float zoom) { m_currentZoom = zoom; }
+	void SetControlledBySlider(bool controlled) { m_controlledBySlider = controlled; }
+
 	void HandleEvent(TLGE::Event* event);
 private:
 	bool m_mouseClicked;
@@ -34,6 +37,7 @@ private:
 	bool m_zoomingIn;
 
 	bool m_startedInTheUpperHalf;
+	bool m_controlledBySlider{false};
 };
 
 #endif

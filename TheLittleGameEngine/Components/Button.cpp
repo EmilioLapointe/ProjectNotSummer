@@ -79,6 +79,7 @@ namespace TLGE
 				{
 					m_isClicked = true;
 					OnClick();
+					aEvent->SetHandled(true);
 				}
 			}
 		}
